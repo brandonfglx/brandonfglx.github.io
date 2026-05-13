@@ -1,0 +1,252 @@
+/*
+ * All main CSS is based on mobile (mobile-first design).
+ *
+ * Design ideology:
+ * "The 'breakpoints' then become the actual point at which your mobile design begins to
+ * 'break' i.e. cease to be usable or visually pleasing. Once you have a good working 
+ * mobile site, without media queries, you can stop being concerned about specific sizes
+ * and simply add media queries that handle successively larger viewports."
+ */
+
+:root {
+	--bg-color: white;
+	--text-color: black;
+	--text-hover: hsl(0, 0%, 20%);
+	--bg-foreground: hsl(0, 0%, 60%);
+	--scroll-bg-url: "../resources/img/background.svg";
+
+	--header-bar-max-width: 90%;
+	--content-max-width: 80%;
+	--grid-columns: 12;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+/* font-faces */
+
+@font-face {
+	font-family: AdwaitaMono;
+	src: url("../resources/fonts/AdwaitaMono-Regular.ttf");
+}
+
+/* keyframes */
+
+@keyframes scroll-bg {
+	from {
+		background-position: 0px 0px;
+	}
+	to {
+		background-position: 50px 50px;
+	}
+}
+
+@keyframes rainbow {
+	0% {
+		background-color: rgb(128, 0, 0);
+	}
+
+	33% {
+		background-color: rgb(0, 128, 0);
+	}
+
+	67% {
+		background-color: rgb(0, 0, 128);
+	}
+
+	100% {
+		background-color: rgb(128, 0, 0);
+	}
+}
+
+/* Functional CSS classes -> generic/comestic */
+
+.flex-center {
+	/* Inner display flex */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.flex-large {
+	flex: 2;
+}
+
+.flex-small {
+	flex: 1;
+}
+
+.full-round-border {
+	border-radius: 9999px;
+}
+
+.round-border {
+	border-radius: min(40px, 5vw);
+}
+
+.glass-blur {
+	border: 2px solid hsl(0, 0%, 75%, 30%);
+	background-color: hsl(0, 0%, 75%, 10%);
+	backdrop-filter: blur(10px);
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.monospace {
+	font-family: AdwaitaMono, 'Courier New', Courier, monospace;
+}
+
+.large-text {
+	font-size: calc(1.25rem + 1vw);
+}
+
+.text {
+	font-size: calc(1rem + 0.25vw);
+}
+
+.large-padding {
+	padding: 3% 0;
+}
+
+.shift-text-down {
+	transform: translateY(0.15rem);
+}
+
+.text-box {
+	margin: 0.25%;
+	padding: 0.25%;
+}
+
+/* Scrolling background */
+
+body {
+	/* optimize scrolling bg */
+	will-change: background-position;
+
+	/* set background */
+	background-image: url(--scroll-bg-url);
+	background-repeat: repeat;
+	background-size: 50px 50px;
+	background-attachment: fixed;
+
+	/* do animation */
+	animation: scroll-bg 20s linear infinite;
+
+	/* 
+	 * Uses bg-foreground and fill="currentColor" but
+	 * changes text color to not match intended real text color
+	 */
+	color: var(--bg-foreground);
+	background-color: var(--bg-color);
+}
+
+/* Reverts color to intended text color */
+body > * {
+	color: var(--text-color);
+}
+
+/* Content specific scaling -> display sizing */
+
+header {
+	position: sticky;
+	top: 0; /* keep at top of page / screen even when scrolling */
+	z-index: 1000; /* keep always on top of other elements */
+
+	/* controls padding for sticky */
+	padding: clamp(1.5%, 1rem, 2.5%) 0;
+}
+
+#header-bar-container {
+	width: var(--header-bar-max-width);
+
+	/* vertical margin is already covered by header padding */
+	margin: 0 auto; 
+	padding: 0.75% 3%;
+}
+
+main {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-auto-rows: auto;
+	gap: calc(0.5rem + 0.75vw) 0;
+
+	justify-content: center;
+
+	width: var(--content-max-width);
+	margin: 0 auto;
+}
+
+main > section {
+	margin: 0 auto;
+	padding: 2%;
+}
+
+footer {
+	padding: clamp(1.5%, 1rem, 2.5%) 0;
+}
+
+#footer-bar-container {
+	width: var(--header-bar-max-width);
+	margin: 0 auto;
+}
+
+/* additional fixes for broken elements */
+
+ul {
+	padding-left: 10%;
+}
+
+li {
+	margin: 0.5% 0;
+}
+
+/* @media to correct dark mode */
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg-color: hsl(0, 0%, 10%);
+		--text-color: white;
+		--text-hover: hsl(0, 0%, 80%);
+
+		/* Since bg is an svg, it uses a modified color for the bg foreground */
+		--bg-foreground: hsl(0, 0%, 60%);
+	}
+}
+
+/* 
+ * All sections should be using grid layouting
+ * Stack sections using CSS grid and container sections 
+ *	- <section> should scale properly since all inner elements are based on size of section
+ */
+@media screen and (min-width: 900px) {
+	main {
+		grid-template-columns: repeat(var(--grid-columns), 1fr);
+		gap: calc(0.5rem + 0.75vw) 1.5%;
+	}
+	
+	main > section {
+		min-width: 0;
+		max-width: 100%;
+
+		margin: 0;
+		padding: 1rem; /* Use rem for consistent large padding */
+	}
+
+	main > section * {
+		min-width: 0;
+		min-height: 0;
+	}
+}
