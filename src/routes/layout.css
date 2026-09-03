@@ -1,0 +1,15 @@
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+@import 'tailwindcss';
+
+@layer base {
+	html {
+		@apply bg-white text-black dark:bg-fglx-gray dark:text-white
+	}
+}
+
+@theme {
+	--color-fglx-gray: hsl(0, 0%, 10%);
+	--color-fglx-glass: hsl(0, 0%, 35%, 25%);
+	--color-fglx-border-glass: hsl(0, 0%, 75%, 25%);
+}
