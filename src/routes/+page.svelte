@@ -1,5 +1,7 @@
 <script lang="ts">
-	
+	function getCurrentYear(): string {
+		return new Date().getFullYear().toString();
+	}
 </script>
 
 <svelte:head>
@@ -38,7 +40,7 @@
 			About Me
 		</h1>
 		<p class="font-mono text-sm md:text-base">
-			Hello, I'm Brandon Li, a junior at Monta Vista High School in Cupertino, CA. I am a successful student and an aspiring programmer with experience in Java and Rust. I am currently tinkering with animation using Blender and game design using Godot. Feel free to reach out if you are interested in partnering or just having a chat!
+			Hello, I'm Brandon Li, a junior at Monta Vista High School in Cupertino, CA. I am an academically successful student and an aspiring programmer with experience in Java and Rust. I am currently tinkering with animation using Blender and game design using Godot. Feel free to reach out if you are interested in partnering or just having a chat!
 		</p>
 	</section>
 	<section class="rounded-3xl bg-fglx-glass border-fglx-border-glass backdrop-blur-md border p-3 lg:p-4 flex flex-col gap-2 md:col-span-4 lg:col-span-3">
@@ -59,7 +61,7 @@
 				Steel City Codes Tutor
 			</li>
 			<li>
-				Introduction to Java Student Tutor / Mentor
+				Introduction to Java Student Tutor
 			</li>
 		</ul>
 	</section>
@@ -81,13 +83,13 @@
 		</h1>
 		<ul class="font-mono list-disc list-inside text-sm md:text-base">
 			<li>
-				Hack Club - this website is one of my submissions!
+				Hack Club - Stardance (2026)
 			</li>
 			<li>
-				MVRT - participated in 2026 Rebuilt competition
+				MVRT - Rebuilt (2026)
 			</li>
 			<li>
-				Steel City Codes - Tutor for Fall 2025 & Spring 2026
+				Steel City Codes - Tutor (Fall 2025 & Spring 2026)
 			</li>
 			<li>
 				Tutoring - Java, Physics, & Math
@@ -138,6 +140,6 @@
 		</div>
 	</section>
 </main>
-<footer class="my-2">
-	<p class="text-center font-mono text-sm">&copy;2026 Brandon Li</p>
+<footer class="mb-4">
+	<p class="text-center font-mono text-sm">&copy;{getCurrentYear()} Brandon Li</p>
 </footer>
