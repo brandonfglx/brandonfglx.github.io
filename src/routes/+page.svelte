@@ -31,7 +31,7 @@
 		<h1 class="font-mono text-center p-1 text-2xl lg:p-2">
 			Hello!
 		</h1>
-		<img src="https://avatars.githubusercontent.com/u/173737496?v=4" alt="Brandon Li" class="font-mono text-center rounded-full aspect-square object-cover w-40">
+		<img src="https://avatars.githubusercontent.com/u/173737496" alt="Brandon Li" class="font-mono text-center rounded-full aspect-square object-cover w-40">
 	</section>
 	<section class="rounded-3xl bg-fglx-glass border-fglx-border-glass backdrop-blur-md border p-3 lg:p-4 flex flex-col gap-2 md:col-span-8 lg:col-span-6">
 		<h1 class="font-mono text-center p-1 text-2xl lg:p-2">
@@ -102,36 +102,36 @@
 			<section class="rounded-2xl bg-gray-50 dark:bg-fglx-glass border-fglx-border-glass backdrop-blur-md border p-4">
 				<!-- <img src="" alt="Personal Website" class="text-center"> -->
 				<h1 class="font-mono text-center pt-1 text-lg lg:text-xl">
-					Personal Website
+					<a href="https://brandonfglx.github.io" target="_blank" class="underline underline-offset-4 decoration-2">Personal Website</a>
 				</h1>
 				<h2 class="font-mono text-center pb-1 text-sm lg:text-lg text-green-500">
 					A website with a personal touch.
 				</h2>
-				<p>
+				<p class="font-mono pt-1 text-sm lg:text-base">
 					A personal website that explains everything about me. Made with Svelte, TailwindCSS, and some light HTML, the website is sleek and concise with its information.
 				</p>
 			</section>
 			<section class="rounded-2xl bg-gray-50 dark:bg-fglx-glass border-fglx-border-glass backdrop-blur-md border p-4">
 				<!-- <img src="" alt="TermTab" class="text-center"> -->
 				<h1 class="font-mono text-center pt-1 text-lg lg:text-xl">
-					TermTab
+					<a href="https://brandonfglx.github.io/TermTab" target="_blank" class="underline underline-offset-4 decoration-2">TermTab</a>
 				</h1>
 				<h2 class="font-mono text-center pb-1 text-sm lg:text-lg text-green-500">
 					GUIs are boring; try a terminal window instead!
 				</h2>
-				<p>
+				<p class="font-mono pt-1 text-sm lg:text-base">
 					A fully-featured start page stylized like a terminal. Search instantly by typing your query into the command line or view more details by calling programs or clicking on widgets. And its fully customizable to the user's liking.
 				</p>
 			</section>
 			<section class="rounded-2xl bg-gray-50 dark:bg-fglx-glass border-fglx-border-glass backdrop-blur-md border p-4">
 				<!-- <img src="" alt="TermOS" class="text-center"> -->
 				<h1 class="font-mono text-center p-1 text-lg lg:text-xl">
-					TermOS
+					<a href="https://brandonfglx.github.io/TermOS" target="_blank" class="underline underline-offset-4 decoration-2">TermOS</a>
 				</h1>
 				<h2 class="font-mono text-center pb-1 text-sm lg:text-lg text-green-500">
 					What if the terminal is the OS and much more than a terminal?
 				</h2>
-				<p>
+				<p class="font-mono pt-1 text-sm lg:text-base">
 					An operating system stylized like a terminal that runs on your browser. Write files, make custom configurations, browse, and listen to music all through a single webpage!
 				</p>
 			</section>
